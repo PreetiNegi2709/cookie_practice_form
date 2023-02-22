@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css_reset.css">
+    <style>
+        .container{
+            background-color: gray;
+            height: 100vh; 
+            width: 100%;
+            display: flex;
+            justify-content: center; align-items: center;
+        }
+        .box{
+            /* height: 40%;  */
+            /* width: 40%;  */
+            padding: 5rem;
+            background-color: azure;
+            border-radius: 0.4rem;
+            display: flex;
+            justify-content: center; align-items: center;
+        }
+        label , input{
+            font-size: 1rem;
+            border-radius: 0.4rem;
+        }
+        .inp_c{
+            border: 0.2px solid black; margin: 0.6rem;
+        }
+        .inp_afterclick{
+            background-color: rgb(202, 252, 202);
+        }
+        .btn_c{
+            background-color: rgb(129, 239, 129); color: white; font-weight: bold;
+            border: none; border-radius: 0.4rem;
+            padding: 0.4rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <form id="frm"  >
+                <legend style="font-size: 1.5rem; align-items: center; padding: 1rem;"> This will store Cookie</legend>
+                <label for="inp">Enter userID :</label>
+                <input id="inp_k" class="inp_c" type="text" placeholder="ex. Ram" > <br>
+                <label for="inp">Enter Password :</label>
+                <input id="inp_v" class="inp_c" type="password" > <br> <br>
+                <button id="btn" class="btn_c" type="button">submit</button>
+                <button id="btn_r" class="btn_c" type="reset" onclick="location.reload()">reload</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // let before_click = document.querySelector(".inp_c")
+        // inp.addEventListener("click",function(e){
+            // inp.style.backgroundColor = "rgba(205, 244, 205, 0.742)" //but phir bahar click krke ht nahi raha
+            // before_click.classList.add("inp_afterclick")
+        // })
+
+        // const add_cookie =async()=>{
+        //     btn.onclick = async function (){
+        //         let id_cookie = document.getElementById("inp_k").value
+        //         // console.log(id_cookie)
+        //         let pas_cookie = document.getElementById("inp_v").value
+        //         document.cookie = await (encodeURIComponent(id_cookie)+"="+encodeURIComponent(pas_cookie) )
+        //     }
+        // }
+        
+        // const main = async ()=>{
+        //     await add_cookie() //wait for this to proceed
+        // }
+        
+        //  main()
+        // console.log("the cookies present")
+
+            btn.onclick = function (){
+                let id_cookie = document.getElementById("inp_k").value
+                // console.log(id_cookie)
+                let pas_cookie = document.getElementById("inp_v").value
+                document.cookie = (encodeURIComponent(id_cookie)+"="+encodeURIComponent(pas_cookie) )
+            }
+        
+        console.log("the cookies present")
+        console.log(document.cookie)
+    </script>
+</body>
+</html>
